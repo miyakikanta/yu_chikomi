@@ -18,10 +18,10 @@
 body {
   min-height: 100vh;
   color: white;
-  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); 
   font-family: sans-serif;
 }
- 
+  
 .notification:not(:last-child){
   margin-bottom: 0;
 }
