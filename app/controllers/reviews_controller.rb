@@ -16,6 +16,10 @@ before_action :authenticate_user!, only: [:create]
     end
   end
   
+  def destroy
+  Review.find(params[:id]).destroy
+  redirect_to onsens_path 
+  end
 
   private
   def review_params
