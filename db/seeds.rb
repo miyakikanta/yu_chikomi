@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Onsen.create(name: "竜泉寺の湯")
+Onsen.create(name: "土岐 よりみち温泉")
+Onsen.create(name: "篠木温泉 満天望")
+Onsen.create(name: "天然温泉 三峰")
+Onsen.create(name: "長久手温泉ござらっせ")  
