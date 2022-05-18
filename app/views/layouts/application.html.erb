@@ -8,10 +8,20 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/ea349ecfeb.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ea349ecfeb.js" crossorigin="anonymous"></script> 
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="notification is-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="notification is-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %> 
     <%= yield %>
   </body>
 </html>
