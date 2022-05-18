@@ -2,8 +2,8 @@ class ReviewsController < ApplicationController
 before_action :authenticate_user!, only: [:create]
   def index
     @onsen = Onsen.find(params[:onsen_id])
-    @reviews = @onsen.reviews
-  end
+    @reviews = Review.all 
+  end 
 
   def create 
     @review = Review.new(review_params)
@@ -15,9 +15,11 @@ before_action :authenticate_user!, only: [:create]
       render "onsens/show"
     end
   end
+  
 
   private
   def review_params
-    params.require(:review).permit(:onsen_id, :score, :impression)
+    params.require(:review).permit(:onsen_id,:user_id, :score, :impression)
   end
 end 
+ 
