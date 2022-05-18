@@ -13,7 +13,7 @@
 
   <body>
     <% if flash[:notice] %>
-      <div class="notification is-info">
+      <div class="notification is-success">
         <p class="notice"><%= notice %></p>
       </div>
     <% end %>
@@ -26,22 +26,22 @@
       <div class="navbar-brand">
         <p class="navbar-item">
           <%= link_to root_path do %>　
-            <strong class="is-size-3" style="font-family: cursive; color: black;">ユ(湯)コミ</strong>
+            <strong class="is-size-2" style="font-family: Impact; color: red;">ユ(湯)コミ</strong>
           <% end %>
-        </p> 
+        </p>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-      </div>
+      </div> 
       <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
+        <div class="navbar-start ">
           <%= link_to onsens_path, class: "navbar-item" do %>
             温泉一覧
           <% end %>
         </div>
-        <div class="navbar-end">
+        <div class="navbar-end"> 
           <div class="navbar-item">
             <% if user_signed_in? %>
               <p class="navbar-item">ようこそ <%= current_user.username %> さん</p>

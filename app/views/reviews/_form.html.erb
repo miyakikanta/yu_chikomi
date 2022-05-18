@@ -24,7 +24,7 @@
     <%= f.hidden_field :onsen_id, value: onsen.id %>
     <%= f.hidden_field :score, id: "rating-value" %>
     <%= f.text_field :impression, class: "textarea" %>
-    <%= f.submit "投稿", class: "button mt-3" %>
+    <%= f.submit "投稿", class: "button mt-3" %> 
     <%= link_to "他のレビューを見る", onsen_reviews_path(onsen), class: "button light ml-3 mt-3" %>
   <% end %>
 </div>

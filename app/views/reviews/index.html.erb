@@ -33,7 +33,9 @@
                 <td><%= review.score %></td>
                 <td><%= review.impression %></td>
              <% if review.user == current_user %>
-                <td><%= link_to "削除", review_path(review.id), method: :delete %></td> 
+             <td><button class="button is-danger">
+                <%= link_to "削除", review_path(review.id), method: :delete %>
+             </button></td> 
              <% end %>
            <% end %>
               </tr>
