@@ -24,11 +24,11 @@
 行って良かった温泉を誰かに共有したい時や、行ったところの無い温泉の評価を知りたい時など。
 
 ## 設計書
-###ER図
+### ER図
 https://drive.google.com/file/d/1RhQDnlfA90HuZmWQHzxKDtF-TUGBO2RH/view?usp=sharing
-###テーブル定義書
+### テーブル定義書
 https://docs.google.com/spreadsheets/d/1WipXowSiDc2c3f2Tu5DzSYVteJ9Ii_vguFnRbKDtPlA/edit?usp=sharing
-###詳細設計書
+### 詳細設計書 
 https://docs.google.com/spreadsheets/d/1sMt08L940KFhq5wEcGz_ziHfiU26Of3x/edit?usp=sharing&ouid=101304331612258197414&rtpof=true&sd=true
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1VK0a8LGT7KbCCJ1H_9Gu1FbsfgyqKaGrmEkjnwWkMdA/edit?usp=sharing 
