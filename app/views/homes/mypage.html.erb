@@ -1,0 +1,26 @@
+<%= link_to "戻る", onsens_path(@onsen), class: "button light ml-3 mt-3 fas fa-angle-left" %> 
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+               <h2>温泉ブックマーク一覧</h2> 
+        <table>
+          <thead> 
+            <tr> 
+              <th>温泉名</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @bookmarks.each do |bookmark| %>
+              <tr>
+                <td>
+              <%= bookmark.onsen.name %> 
+                </td>
+              </tr> 
+            <% end %>
+          </tbody>
+        </table>
+      </div> 
+    </div>
+  </div>
+</section> 

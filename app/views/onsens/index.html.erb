@@ -3,12 +3,21 @@
     <div class="columns is-centered">
       <div class="column is-5">
         <% @onsens.each do |onsen| %>
+          <% if onsen.bookmarked_by?(current_user) %>
+           <%= link_to  onsen_bookmarks_path(onsen), method: :delete, class: "button card-footer-item has-background-info has-text-danger-light" do %>
+             ブックマークを外す（ブックマーク済み）
+                <% end %>
+          <% else %>  
+           <%= link_to  onsen_bookmarks_path(onsen), method: :post , class: "button card-footer-item has-background-success	has-text-danger-light " do %>
+             ブックマーク
+                <% end %> 
+          <% end %>
           <div class="card mb-6">
             <header class="card-header">
-              <p class="card-header-title"> 
-                <%= onsen.name %>
-              </p>
-            </header>
+              <p class="card-header-title">  
+                <%= onsen.name %> 
+              </p> 
+            </header> 
             <div class="card-content">
               <div class="content">
                 <div class="content average-score">
@@ -23,14 +32,14 @@
               </div> 
             </div>
             <footer class="card-footer">
-              <%= link_to onsen_reviews_path(onsen), class: "button card-footer-item" do %>
+              <%= link_to onsen_reviews_path(onsen), class: "button card-footer-item fa fa-eye " do %>
                 レビューを見る
               <% end %>
-              <%= link_to onsen_path(onsen), class: "button card-footer-item" do %>
-                レビューを書く
+              <%= link_to onsen_path(onsen), class: "button card-footer-item fa fa-pencil-square-o"  do %>
+                レビューを書く 
               <% end %>
             </footer>
-          </div> 
+          </div>
         <% end %>
       </div>
     </div>
