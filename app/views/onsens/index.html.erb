@@ -7,8 +7,8 @@
            <%= link_to  onsen_bookmarks_path(onsen), method: :delete, class: "button card-footer-item has-background-info has-text-danger-light" do %>
              ブックマークを外す（ブックマーク済み）
                 <% end %>
-          <% else %>  
-           <%= link_to  onsen_bookmarks_path(onsen), method: :post , class: "button card-footer-item has-background-success	has-text-danger-light " do %>
+          <% else %>
+           <%= link_to  onsen_bookmarks_path(onsen), method: :post , class: "button card-footer-item has-background-success	has-text-danger-light fa fa-bookmark " do %>
              ブックマーク
                 <% end %> 
           <% end %>
@@ -39,7 +39,7 @@
                 レビューを書く 
               <% end %>
             </footer>
-          </div>
+          </div> 
         <% end %>
       </div>
     </div>

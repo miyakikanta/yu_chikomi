@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YuChikomi</title>
+    <title>YuChikomi</title> 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/ea349ecfeb.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/ea349ecfeb.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -25,7 +25,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand ">
         <p class="navbar-item">
-          <%= link_to root_path do %>　
+          <%= link_to root_path do %>
             <strong class="is-size-2" style="font-family: Impact; color: red;">[湯]コミ</strong>
           <% end %>
         </p>
@@ -34,18 +34,18 @@
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-      </div> 
+      </div>
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start ">
           <%= link_to onsens_path, class: "navbar-item has-background-danger has-text-danger-light " do %>
-            温泉一覧  
+            温泉一覧
           <% end %>
           <%= link_to homes_mypage_path, class: "navbar-item has-background-success  has-text-danger-light	" do %>
             温泉ブックマーク一覧
           <% end %>
 
         </div>
-        <div class="navbar-end"> 
+        <div class="navbar-end">
           <div class="navbar-item">
             <% if user_signed_in? %>
               <p class="navbar-item">ようこそ！ <%= current_user.username %> さん</p>
