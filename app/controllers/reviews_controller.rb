@@ -2,8 +2,8 @@ class ReviewsController < ApplicationController
 before_action :authenticate_user!, only: [:create,:destroy,:index] 
   def index
     @onsen = Onsen.find(params[:onsen_id])
-    @reviews = Review.all 
-  end 
+    @reviews = @onsen.reviews 
+  end
 
   def create  
     @review = Review.new(review_params)
@@ -17,9 +17,26 @@ before_action :authenticate_user!, only: [:create,:destroy,:index]
   end
   
   def destroy
-  Review.find(params[:id]).destroy
-  redirect_to onsens_path 
+    Review.find(params[:id]).destroy
+    redirect_to onsens_path 
   end
+ 
+  def edit    
+    @review = Review.find(params[:id])
+  end
+    
+  def update
+    @review = Review.find(params[:id])
+    @review.user_id = current_user.id 
+   if  @review.update(review_params)
+     redirect_to onsen_reviews_path(@review.onsen)
+     flash[:notice] = "You have updated review successfully" 
+   else
+     @onsen = Onsen.find(params[:onsen_id])
+     render "onsens/show"
+   end
+  end
+
 
   private
   def review_params
