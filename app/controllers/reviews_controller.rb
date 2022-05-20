@@ -2,8 +2,8 @@ class ReviewsController < ApplicationController
 before_action :authenticate_user!, only: [:create,:destroy,:index] 
   def index
     @onsen = Onsen.find(params[:onsen_id])
-    @reviews = @onsen.reviews 
-  end
+    @reviews = @onsen.reviews.page(params[:page])
+  end 
 
   def create  
     @review = Review.new(review_params)

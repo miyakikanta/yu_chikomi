@@ -1,7 +1,7 @@
 class OnsensController < ApplicationController
   before_action :authenticate_user!, only: [:show]
   def index
-    @onsens = Onsen.all
+    @onsens = Onsen.page(params[:page])
   end
 
   def show
