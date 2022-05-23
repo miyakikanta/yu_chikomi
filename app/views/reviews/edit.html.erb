@@ -1,35 +1,42 @@
 <%= link_to "戻る", onsen_reviews_path(@review.onsen_id), class: "button light ml-3 mt-3 fas fa-angle-left" %>
-
-<p class="is-size-4 mb-3">レビューを編集する</p>
-<% if @review.errors.any? %>
-  <div class="notification is-danger">
-    <h2><%= @review.errors.count %>件のエラーがあります。</h2>
-    <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-<div class="rating-box mt-3">
-  <%= form_with model: @review, url: review_path, local: true do |f| %>
-    <div class="main-rating">
-      <div class="ratings mb-3">
-        <span class="fa fa-star-o" id="star"></span>
-        <span class="fa fa-star-o" id="star"></span>
-        <span class="fa fa-star-o" id="star"></span>
-        <span class="fa fa-star-o" id="star"></span>
-        <span class="fa fa-star-o" id="star"></span>
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <p class="is-size-4 mb-3">【レビューを編集する】</p>
+        <% if @review.errors.any? %>
+          <div class="notification is-danger">
+            <h2><%= @review.errors.count %>件のエラーがあります。</h2>
+            <ul>
+              <% @review.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="rating-box mt-3">
+          <%= form_with model: @review, url: review_path, local: true do |f| %>
+            <div class="main-rating">
+              <div class="ratings mb-3">
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+              </div>
+              <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
+            </div>
+            ※星評価が入力出来ない場合は、サイトをリロードしてください
+            <%= f.hidden_field :onsen_id, value: @review.onsen_id %>
+            <%= f.hidden_field :score, id: "rating-value" %>
+            <%= f.text_field :impression, class: "textarea" %>
+            <%= f.submit "更新", class: "button mt-3 is-success" %>
+            <%= link_to "他のレビューを見る", onsen_reviews_path(@review.onsen_id), class: "button light ml-3 mt-3" %>
+          <% end %>
+        </div>
       </div>
-      <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
     </div>
-    ※星評価が入力出来ない場合は、サイトをリロードしてください
-    <%= f.hidden_field :onsen_id, value: @review.onsen_id %>
-    <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.text_field :impression, class: "textarea" %>
-    <%= f.submit "更新", class: "button mt-3" %>
-    <%= link_to "他のレビューを見る", onsen_reviews_path(@review.onsen_id), class: "button light ml-3 mt-3" %>
-  <% end %>
-</div>
-
+  </div> 
+</section>
+ 
 <%= javascript_include_tag 'reviews.js' %>

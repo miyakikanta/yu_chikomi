@@ -4,7 +4,7 @@ class OnsensController < ApplicationController
     @onsens = Onsen.page(params[:page])
   end  
  
-  def rank
+  def rank 
     @onsens = Onsen.
               left_joins(:reviews).
               distinct.
@@ -16,7 +16,7 @@ class OnsensController < ApplicationController
                   0
                 end
               end.
-              reverse 
+              reverse
   end 
   def show
     @onsen = Onsen.find(params[:id])

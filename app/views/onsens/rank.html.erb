@@ -1,20 +1,20 @@
-<h2>温泉ランキング（評価点数順）</h2>
 <section class="section mt-6">
-  <div class="container"> 
-    <div class="columns is-centered">
-      <div class="column is-5">
+  <div class="container "> 
+   <h1 class="title has-text-light has-text-centered ">温泉ランキング</h1> 
+    <div class="columns is-centered "> 
+      <div class="column is-5 ">
         <% @onsens.each.with_index(1) do |onsen,i| %>
           <% if onsen.bookmarked_by?(current_user) %>
            <%= link_to  onsen_bookmarks_path(onsen), method: :delete, class: "button card-footer-item has-background-info has-text-danger-light" do %>
              ブックマークを外す（ブックマーク済み）
-                <% end %>
+           <% end %>
           <% else %>
            <%= link_to  onsen_bookmarks_path(onsen), method: :post , class: "button card-footer-item has-background-success	has-text-danger-light fa fa-bookmark " do %>
              ブックマーク
-                <% end %> 
+           <% end %>
           <% end %>
-          <div class="card mb-6">
-                第<%= i %>位
+          <div class="card  mb-6 is-size-3 ">
+           <strong class="is-size-5" style="font-family: Impact;">【第<%= i %>位】</strong>
             <header class="card-header">
               <p class="card-header-title">
                 <%= onsen.name %> 
@@ -47,5 +47,3 @@
     </div> 
   </div>  
 </section>
-
-

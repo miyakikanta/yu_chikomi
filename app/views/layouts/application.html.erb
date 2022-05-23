@@ -10,7 +10,6 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/ea349ecfeb.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
     <% if flash[:notice] %>
       <div class="notification is-success">
@@ -26,9 +25,9 @@
       <div class="navbar-brand ">
         <p class="navbar-item">
           <%= link_to root_path do %>
-            <strong class="is-size-2" style="font-family: Impact; color: red;">[湯]コミ</strong>
-          <% end %>
-        </p>
+            <strong class="is-size-2" style="font-family: Impact; color: black;">口[湯地]コミ</strong>
+          <% end %>  
+        </p> 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -37,16 +36,16 @@
       </div>
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start ">
-          <%= link_to onsens_path, class: "navbar-item has-background-danger has-text-danger-light " do %>
-            温泉一覧
+          <%= link_to onsens_path, class: "navbar-item has-background-danger has-text-light " do %>
+            <strong class="is-size-5" style="font-family: Impact;">温泉一覧</strong>
           <% end %>
-          <%= link_to homes_mypage_path, class: "navbar-item has-background-success  has-text-danger-light" do %>
-            温泉ブックマーク一覧
+          <%= link_to onsens_rank_path, class: "navbar-item has-background-info  has-text-light " do %>
+            <strong class="is-size-5" style="font-family: Impact;">温泉ランキング</strong>
           <% end %>
-          <%= link_to onsens_rank_path, class: "navbar-item has-background-info  has-text-danger-light " do %>
-            温泉ランキング
-          <% end %> 
-        </div>
+          <%= link_to homes_mypage_path, class: "navbar-item has-background-success  has-text-light" do %>
+            <strong class="is-size-5" style="font-family: Impact;">温泉ブックマーク一覧</strong>
+          <% end %>
+        </div> 
         <div class="navbar-end">
           <div class="navbar-item">
             <% if user_signed_in? %>
@@ -57,7 +56,7 @@
                 <%= link_to destroy_user_session_path, method: :delete, class: "button has-background-danger has-text-danger-light" do %>
                   ログアウト
                 <% end %>
-              <% else %>
+              <% else %> 
                 <%= link_to new_user_session_path, class: "button has-background-success has-text-danger-light" do %>
                   ログイン
                 <% end %>
@@ -72,4 +71,4 @@
     </nav>
     <%= yield %>
   </body>
-</html>
+</html> 

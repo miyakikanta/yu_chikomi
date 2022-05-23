@@ -5,7 +5,7 @@
       <div class="column is-5">
         <div class="card mb-6">
           <header class="card-header">
-            <p class="card-header-title">
+            <p class="card-header-title ">
               <%= @onsen.name %>
             </p>
           </header>
@@ -28,20 +28,20 @@
             </tr>
           </thead>
           <tbody>
-            <% @reviews.each do |review| %>
-              <tr>
-                <td><%= review.user.username %></td>
-                <td><%= review.score %></td>
-                <td><%= review.impression %></td>
+           <% @reviews.each do |review| %>
+            <tr>
+             <td><%= review.user.username %></td>
+             <td><%= review.score %></td>
+             <td><%= review.impression %></td>
              <% if review.user == current_user %>
-             <td><button class="button is-danger">
-                <%= link_to "削除", review_path(review.id), method: :delete %>
-             </button></td>
-             <td><button class="button is-success">  
-                <%= link_to "編集", edit_review_path(review.id) %>  
-             </button></td>        
-             <% end %>   
-              </tr> 
+             <td><%= link_to review_path(review.id), method: :delete, class: "button is-danger" do %>
+                  削除
+                 <% end %></td>
+             <td><%= link_to edit_review_path(review.id), class: "button is-success" do %>
+                  編集
+                 <% end %></td>
+            </tr>
+             <% end %>
            <% end %> 
           </tbody>
         </table> 
@@ -49,6 +49,7 @@
     </div>
   </div> 
 </section>
+
 <div class="columns is-centered">
   <div class="column is-2">
    <%= paginate @reviews %>

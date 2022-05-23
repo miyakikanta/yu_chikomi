@@ -1,22 +1,26 @@
-<%= link_to "戻る", onsens_path(@onsen), class: "button light ml-3 mt-3 fas fa-angle-left" %> 
+
 <section class="section mt-6">
-  <div class="container">
+<h1 class="title has-text-light has-text-centered has-text-success">温泉ブックマーク一覧</h1>
+  <div class="container ">
     <div class="columns is-centered">
-      <div class="column is-5">
-               <h2>温泉ブックマーク一覧</h2> 
+      <div class="column is-5 ">
         <table>
-          <thead> 
-            <tr> 
-              <th>温泉名</th>
+          <thead>
+            <tr>
+              <th class = "has-text-light">【温泉名】</th>
+              <th class = "has-text-light">【平均レビュースコア】</th> 
             </tr>
           </thead>
           <tbody>
-            <% @bookmarks.each do |bookmark| %>
-              <tr>
-                <td>
-              <%= bookmark.onsen.name %> 
-                </td>
-              </tr> 
+            <% @bookmarks.each.with_index(1) do |bookmark,i| %>
+            <tr>
+              <td class = "is-size-3">
+             <%= bookmark.onsen.name %> 
+              </td>
+              <td class = "is-size-3">
+          　 <%= bookmark.onsen.avg_score %>点
+              </td>
+            </tr> 
             <% end %>
           </tbody>
         </table>
