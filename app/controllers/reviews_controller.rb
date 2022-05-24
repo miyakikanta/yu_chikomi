@@ -42,4 +42,4 @@ before_action :authenticate_user!, only: [:create,:destroy,:index]
   def review_params
     params.require(:review).permit(:onsen_id,:user_id, :score, :impression)
   end
-end 
+end

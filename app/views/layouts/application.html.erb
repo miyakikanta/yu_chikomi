@@ -9,8 +9,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/ea349ecfeb.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
+
     <% if flash[:notice] %>
       <div class="notification is-success">
         <p class="notice"><%= notice %></p>
@@ -47,6 +49,10 @@
           <% end %>
         </div> 
         <div class="navbar-end">
+          <%= link_to inquiry_path, class: "navbar-item " do %>
+            <strong class="is-size-5" style="font-family: Impact;">お問い合わせ</strong>
+          <% end %> 
+  
           <div class="navbar-item">
             <% if user_signed_in? %>
               <p class="navbar-item">ようこそ！ <%= current_user.username %> さん</p>

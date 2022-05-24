@@ -1,0 +1,41 @@
+<% if @inquiry.errors.any? %>
+ <div class="alert alert-danger" role="alert">
+   <div class="notification is-danger">
+    <% @inquiry.errors.each do |attr, msg| %>
+       <p class="notice"><li><%= msg %></li></p>
+     <% end %>
+   </div>
+   </ul>
+ </div> 
+<% end %> 
+
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+          <div class=" title has-text-light ">
+            お問い合わせ 
+          </div>
+        
+          <table class="table ">
+            <tr>
+              <th>名前<span class="text-danger">（必須）</span></th>
+              <td><%= f.text_field :name %></td>
+            </tr>
+            <tr>
+              <th>メールアドレス<span class="text-danger">（必須）</span></th>
+              <td><%= f.text_field :email %></td>
+            </tr>
+            <tr>
+              <th>お問い合わせ内容</th>
+              <td><%= f.text_area :message %></td>
+            </tr>
+          </table>
+          <%= f.submit '確認', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div> 
+</section>
+ 

@@ -2,7 +2,7 @@ class OnsensController < ApplicationController
   before_action :authenticate_user!, only: [:show]
   def index
     @onsens = Onsen.page(params[:page])
-  end  
+  end
  
   def rank 
     @onsens = Onsen.
