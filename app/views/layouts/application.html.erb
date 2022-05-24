@@ -52,7 +52,7 @@
           <%= link_to inquiry_path, class: "navbar-item " do %>
             <strong class="is-size-5" style="font-family: Impact;">お問い合わせ</strong>
           <% end %> 
-  
+
           <div class="navbar-item">
             <% if user_signed_in? %>
               <p class="navbar-item">ようこそ！ <%= current_user.username %> さん</p>
@@ -60,14 +60,14 @@
             <div class="buttons">
               <% if user_signed_in? %>
                 <%= link_to destroy_user_session_path, method: :delete, class: "button has-background-danger has-text-danger-light" do %>
-                  ログアウト
+                <strong class="is-size-5" style="font-family: Impact;">ログアウト</strong>
                 <% end %>
               <% else %> 
                 <%= link_to new_user_session_path, class: "button has-background-success has-text-danger-light" do %>
-                  ログイン
+                <strong class="is-size-5" style="font-family: Impact;">ログイン</strong>
                 <% end %>
                 <%= link_to new_user_registration_path, class: "button" do %>
-                  新規登録
+                <strong class="is-size-5" style="font-family: Impact;">新規登録</strong>
                 <% end %>
               <% end %>
             </div>
